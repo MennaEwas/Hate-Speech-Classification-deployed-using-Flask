@@ -35,7 +35,7 @@ body {
   color: white;
 }
 
-.topnav .search-container {
+.topnav .input-container {
   float: right ;
 }
 
@@ -47,33 +47,18 @@ body {
   width: 700px;
 }
 
-.topnav .search-container button {
-  float: right;
-  padding: 6px 10px;
-  margin-top: 8px;
-  margin-right: 16px;
-  background: #ddd;
-  font-size: 17px;
-  border: none;
-  cursor: pointer;
-  width: 100px;
-}
-
-.topnav .search-container button:hover {
-  background: #ccc;
-}
 
 @media screen and (max-width: 600px) {
-  .topnav .search-container {
+  .topnav .input-container {
     float: none;
   }
-  .topnav a, .topnav input[type=text], .topnav .search-container button {
+  .topnav a, .topnav input[type=text], .topnav {
     float: none;
     display: block;
     text-align: left;
     width: 100%;
     margin: 0;
-    padding: 14px;
+    padding: 16px;
   }
   .topnav input[type=text] {
     border: 1px solid #ccc;
@@ -84,20 +69,31 @@ body {
 <body>
 
 <div class="topnav">
-  <a class="active" href="#home">Home</a>
-  <div class="search-container">
+  <a class="active" href="#home">Cough App</a>
+  <div class="input-container">
      <form action = "http://localhost:5000/" method = "post">
-      <input type="text" placeholder="Search" name="search">
-      <button type="submit"><i class="fa fa-search"></i></button>
+		<label for = "ID"> ID: </label> 
+		<input type = "text"> <br>
+		<label for = "number"> no of coughs per day: </label> 
+		<input type = "text"> <br> <br>
+		
+		<label for = "strong"> choose the strength of your coughs: </label> 
+		<select id = "strong">
+		<option value = "verystrong"> Very Strong </option>
+		<option value = "juststrong" > Strong </option>
+		<option value = "meduim"> Meduim </option>
+		<option value = "weak"> Weak </option>
+		<br>
+		
+		</select>
     </form>
   </div>
 </div>
 
 <div style="padding-left:16px">
-  <h2> Twitter Sentiment Analysis </h2>
+  <h2> Your cough Result: </h2>
 </div>
 
 </body>
 </html>
-
 
